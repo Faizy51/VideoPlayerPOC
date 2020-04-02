@@ -1,24 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fpo-5Z-gIf">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--View Controller2-->
+        <scene sceneID="qoU-WJ-Nkd">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="fpo-5Z-gIf" customClass="ViewController2" customModule="VideoPlayerApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A7M-Nf-p5d">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nbu-I1-FEU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nbu-I1-FEU" secondAttribute="height" multiplier="16:9" id="ckt-Ed-ubx"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="lZR-X5-YwT" kind="embed" id="GGX-ld-8T8"/>
+                                </connections>
+                            </containerView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.55000000000000004" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NdE-Jw-w2f">
+                                <rect key="frame" x="20" y="253" width="374" height="463"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="gB9-9D-zMB"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iQA-Qa-pWd">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="2hy-PH-uyT" customClass="ChatCell" customModule="VideoPlayerApplication" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5eu-1R-Tec" customClass="ChatCell" customModule="VideoPlayerApplication" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gB9-9D-zMB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="gB9-9D-zMB"/>
+                                    </mask>
+                                </variation>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="I2e-ov-4CS" firstAttribute="trailing" secondItem="NdE-Jw-w2f" secondAttribute="trailing" constant="20" id="4Lz-Mg-WPf"/>
+                            <constraint firstItem="NdE-Jw-w2f" firstAttribute="leading" secondItem="I2e-ov-4CS" secondAttribute="leading" constant="20" id="JXJ-To-qpM"/>
+                            <constraint firstItem="NdE-Jw-w2f" firstAttribute="top" secondItem="I2e-ov-4CS" secondAttribute="top" constant="20" id="K0h-SS-eh7"/>
+                            <constraint firstItem="I2e-ov-4CS" firstAttribute="bottom" secondItem="NdE-Jw-w2f" secondAttribute="bottom" constant="20" id="OLH-Qc-U48"/>
+                            <constraint firstItem="I2e-ov-4CS" firstAttribute="bottom" secondItem="NdE-Jw-w2f" secondAttribute="bottom" constant="20" id="TDz-T8-6ol"/>
+                            <constraint firstItem="NdE-Jw-w2f" firstAttribute="leading" secondItem="I2e-ov-4CS" secondAttribute="leading" constant="20" id="Vmh-CP-w9B"/>
+                            <constraint firstItem="nbu-I1-FEU" firstAttribute="leading" secondItem="I2e-ov-4CS" secondAttribute="leading" id="XgC-m6-yev"/>
+                            <constraint firstItem="nbu-I1-FEU" firstAttribute="top" secondItem="A7M-Nf-p5d" secondAttribute="top" id="fVZ-Xb-Ysf"/>
+                            <constraint firstItem="nbu-I1-FEU" firstAttribute="trailing" secondItem="I2e-ov-4CS" secondAttribute="trailing" id="hbG-m7-Mcx"/>
+                            <constraint firstItem="NdE-Jw-w2f" firstAttribute="top" secondItem="nbu-I1-FEU" secondAttribute="bottom" constant="20" id="yYx-m1-chr"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I2e-ov-4CS"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="4Lz-Mg-WPf"/>
+                                <exclude reference="OLH-Qc-U48"/>
+                                <exclude reference="TDz-T8-6ol"/>
+                                <exclude reference="JXJ-To-qpM"/>
+                                <exclude reference="K0h-SS-eh7"/>
+                                <exclude reference="Vmh-CP-w9B"/>
+                                <exclude reference="yYx-m1-chr"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=compact-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="OLH-Qc-U48"/>
+                                <include reference="K0h-SS-eh7"/>
+                                <include reference="Vmh-CP-w9B"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="4Lz-Mg-WPf"/>
+                                <include reference="TDz-T8-6ol"/>
+                                <include reference="JXJ-To-qpM"/>
+                                <include reference="yYx-m1-chr"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="chatsCollection" destination="NdE-Jw-w2f" id="toQ-pG-BWx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xdW-Pt-0bR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1235.8695652173915" y="-237.68115942028987"/>
+        </scene>
+        <!--Player Controller-->
+        <scene sceneID="Z5F-cT-CpC">
+            <objects>
+                <viewController storyboardIdentifier="AVPlayerController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lZR-X5-YwT" customClass="AVPlayerController" customModule="VideoPlayerApplication" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7t-FN-Bdw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pkI-Y6-GGU"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lma-a3-H1P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1236" y="317"/>
         </scene>
     </scenes>
 </document>
