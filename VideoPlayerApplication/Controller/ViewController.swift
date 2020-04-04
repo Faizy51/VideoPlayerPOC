@@ -11,7 +11,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var chatsCollection: UICollectionView!
     @IBOutlet weak var defaultProfileImageView: UIImageView!
@@ -34,25 +34,43 @@ class ViewController: UIViewController {
         chatsCollection.delegate = self
         chatsCollection.dataSource = self
         chatsCollection.backgroundColor = .clear
-                
+        
+        chatTextField.delegate = self
+        
         defaultProfileImageView.layer.masksToBounds = true
         defaultProfileImageView.layer.cornerRadius = profileImagePortraitCornerRadius
         
         let placeHolderTextColor = UIColor.lightText
         chatTextField.attributedPlaceholder = NSAttributedString(string: "Type your message here..", attributes: [NSAttributedString.Key.foregroundColor: placeHolderTextColor])
-        
                 
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        perform(#selector(buttonAction))
+        return true
+    }
+    
     @IBAction func sendMessage(_ sender: UIButton) {
-  
+        perform(#selector(buttonAction))
+    }
+    
+    @objc func buttonAction() {
+        guard let message = self.chatTextField.text else { return }
+        
+        self.messages.append(message)
+        let newIndexPath = IndexPath(item: messages.count-1, section: 0)
+        chatsCollection.insertItems(at: [newIndexPath])
+        
+        self.chatTextField.text = ""
+        
+        chatsCollection.scrollToItem(at: newIndexPath, at: .bottom, animated: true)
     }
     
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return appDelegate?.applicationData?.messageList.count ?? 0
+        return self.messages.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
