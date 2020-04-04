@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller2-->
+        <!--View Controller-->
         <scene sceneID="qoU-WJ-Nkd">
             <objects>
-                <viewController id="fpo-5Z-gIf" customClass="ViewController2" customModule="VideoPlayerApplication" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fpo-5Z-gIf" customClass="ViewController" customModule="VideoPlayerApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A7M-Nf-p5d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,7 +26,7 @@
                                 </connections>
                             </containerView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NdE-Jw-w2f">
-                                <rect key="frame" x="20" y="253" width="374" height="463"/>
+                                <rect key="frame" x="20" y="302" width="374" height="414"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="gB9-9D-zMB"/>
@@ -58,29 +58,46 @@
                                     </mask>
                                 </variation>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3c-o4-l5t">
+                                <rect key="frame" x="20" y="253" width="374" height="29"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="I2e-ov-4CS" firstAttribute="trailing" secondItem="b3c-o4-l5t" secondAttribute="trailing" constant="20" id="3bA-xl-EVB"/>
                             <constraint firstItem="I2e-ov-4CS" firstAttribute="trailing" secondItem="NdE-Jw-w2f" secondAttribute="trailing" constant="20" id="4Lz-Mg-WPf"/>
                             <constraint firstItem="NdE-Jw-w2f" firstAttribute="leading" secondItem="I2e-ov-4CS" secondAttribute="leading" constant="20" id="JXJ-To-qpM"/>
                             <constraint firstItem="NdE-Jw-w2f" firstAttribute="top" secondItem="I2e-ov-4CS" secondAttribute="top" constant="20" id="K0h-SS-eh7"/>
                             <constraint firstItem="I2e-ov-4CS" firstAttribute="bottom" secondItem="NdE-Jw-w2f" secondAttribute="bottom" constant="20" id="OLH-Qc-U48"/>
+                            <constraint firstItem="b3c-o4-l5t" firstAttribute="top" secondItem="nbu-I1-FEU" secondAttribute="bottom" constant="20" id="Qjd-75-u69"/>
                             <constraint firstItem="I2e-ov-4CS" firstAttribute="bottom" secondItem="NdE-Jw-w2f" secondAttribute="bottom" constant="20" id="TDz-T8-6ol"/>
                             <constraint firstItem="NdE-Jw-w2f" firstAttribute="leading" secondItem="I2e-ov-4CS" secondAttribute="leading" constant="20" id="Vmh-CP-w9B"/>
                             <constraint firstItem="nbu-I1-FEU" firstAttribute="leading" secondItem="I2e-ov-4CS" secondAttribute="leading" id="XgC-m6-yev"/>
                             <constraint firstItem="nbu-I1-FEU" firstAttribute="top" secondItem="A7M-Nf-p5d" secondAttribute="top" id="fVZ-Xb-Ysf"/>
                             <constraint firstItem="nbu-I1-FEU" firstAttribute="trailing" secondItem="I2e-ov-4CS" secondAttribute="trailing" id="hbG-m7-Mcx"/>
+                            <constraint firstItem="b3c-o4-l5t" firstAttribute="leading" secondItem="I2e-ov-4CS" secondAttribute="leading" constant="20" id="jsR-LJ-qGh"/>
+                            <constraint firstItem="NdE-Jw-w2f" firstAttribute="top" secondItem="b3c-o4-l5t" secondAttribute="bottom" constant="20" id="tWT-eS-ryW"/>
                             <constraint firstItem="NdE-Jw-w2f" firstAttribute="top" secondItem="nbu-I1-FEU" secondAttribute="bottom" constant="20" id="yYx-m1-chr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="I2e-ov-4CS"/>
                         <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="b3c-o4-l5t"/>
+                            </mask>
                             <mask key="constraints">
+                                <exclude reference="3bA-xl-EVB"/>
                                 <exclude reference="4Lz-Mg-WPf"/>
                                 <exclude reference="OLH-Qc-U48"/>
                                 <exclude reference="TDz-T8-6ol"/>
+                                <exclude reference="Qjd-75-u69"/>
+                                <exclude reference="jsR-LJ-qGh"/>
                                 <exclude reference="JXJ-To-qpM"/>
                                 <exclude reference="K0h-SS-eh7"/>
                                 <exclude reference="Vmh-CP-w9B"/>
+                                <exclude reference="tWT-eS-ryW"/>
                                 <exclude reference="yYx-m1-chr"/>
                             </mask>
                         </variation>
@@ -92,11 +109,18 @@
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="b3c-o4-l5t"/>
+                            </mask>
                             <mask key="constraints">
+                                <include reference="3bA-xl-EVB"/>
                                 <include reference="4Lz-Mg-WPf"/>
                                 <include reference="TDz-T8-6ol"/>
+                                <include reference="Qjd-75-u69"/>
+                                <include reference="jsR-LJ-qGh"/>
                                 <include reference="JXJ-To-qpM"/>
-                                <include reference="yYx-m1-chr"/>
+                                <include reference="tWT-eS-ryW"/>
+                                <exclude reference="yYx-m1-chr"/>
                             </mask>
                         </variation>
                     </view>
@@ -106,14 +130,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xdW-Pt-0bR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1235.8695652173915" y="-237.68115942028987"/>
+            <point key="canvasLocation" x="1234.7826086956522" y="-238.04347826086959"/>
         </scene>
         <!--Player Controller-->
         <scene sceneID="Z5F-cT-CpC">
             <objects>
                 <viewController storyboardIdentifier="AVPlayerController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lZR-X5-YwT" customClass="AVPlayerController" customModule="VideoPlayerApplication" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a7t-FN-Bdw">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="233"/>
+                        <rect key="frame" x="0.0" y="0.0" width="736" height="414"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="pkI-Y6-GGU"/>

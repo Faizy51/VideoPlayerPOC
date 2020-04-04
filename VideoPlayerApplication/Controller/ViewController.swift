@@ -1,5 +1,5 @@
 //
-//  ViewController2.swift
+//  ViewController.swift
 //  VideoPlayerApplication
 //
 //  Created by Faizyy on 02/04/20.
@@ -11,7 +11,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-class ViewController2: UIViewController {
+class ViewController: UIViewController {
 
     @IBOutlet weak var chatsCollection: UICollectionView!
     weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
@@ -33,7 +33,7 @@ class ViewController2: UIViewController {
     }
 }
 
-extension ViewController2: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return appDelegate?.applicationData?.messageList.count ?? 0
     }
