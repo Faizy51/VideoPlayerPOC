@@ -11,11 +11,18 @@ import AVFoundation
 import AVKit
 
 class AVPlayerController: AVPlayerViewController {
-
+    
+    var urlList: [String] {
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let uList = appDelegate.applicationData?.videourls {
+            return uList
+        }
+        return []
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let url = URL(string: "http://clips.vorwaerts-gmbh.de/VfE_html5.mp4") {
+        if let urlString = urlList.randomElement(), let url = URL(string: urlString) {
             
             let player = AVPlayer(url: url)
             self.player = player

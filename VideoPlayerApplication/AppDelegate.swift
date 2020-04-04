@@ -12,7 +12,20 @@ import AVFoundation
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var applicationData: AppData?
+    
+    func parseData() {
+        let dcoder = JSONDecoder()
 
+        if let path = Bundle.main.url(forResource: "jsonData", withExtension: "json") {
+            if let data = try? Data(contentsOf: path, options: .mappedIfSafe) {
+                self.applicationData = try? dcoder.decode(AppData.self, from: data)
+                return
+            }
+        }
+        assertionFailure("Unable to read json")
+        
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -23,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         catch {
             print("Setting category to AVAudioSessionCategoryPlayback failed.")
         }
+        parseData()
         return true
     }
 

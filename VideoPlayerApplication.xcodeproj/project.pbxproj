@@ -15,6 +15,8 @@
 		1896A53A24365BB400A3E938 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896A53924365BB400A3E938 /* ViewController2.swift */; };
 		1896A53C243669D500A3E938 /* AVPlayerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896A53B243669D500A3E938 /* AVPlayerController.swift */; };
 		1896A540243677F600A3E938 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896A53F243677F600A3E938 /* ChatCell.swift */; };
+		1896A5432437B92400A3E938 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1896A5422437B92400A3E938 /* Video.swift */; };
+		1896A544243851D600A3E938 /* jsonData.json in Resources */ = {isa = PBXBuildFile; fileRef = 1896A5412437B88B00A3E938 /* jsonData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		1896A53924365BB400A3E938 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		1896A53B243669D500A3E938 /* AVPlayerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVPlayerController.swift; sourceTree = "<group>"; };
 		1896A53F243677F600A3E938 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		1896A5412437B88B00A3E938 /* jsonData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = jsonData.json; sourceTree = "<group>"; };
+		1896A5422437B92400A3E938 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,8 @@
 				1896A5182434FAE600A3E938 /* Main.storyboard */,
 				1896A53B243669D500A3E938 /* AVPlayerController.swift */,
 				1896A53924365BB400A3E938 /* ViewController2.swift */,
+				1896A5412437B88B00A3E938 /* jsonData.json */,
+				1896A5422437B92400A3E938 /* Video.swift */,
 				1896A53F243677F600A3E938 /* ChatCell.swift */,
 				1896A51B2434FAEA00A3E938 /* Assets.xcassets */,
 				1896A51D2434FAEA00A3E938 /* LaunchScreen.storyboard */,
@@ -131,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1896A544243851D600A3E938 /* jsonData.json in Resources */,
 				1896A51F2434FAEA00A3E938 /* LaunchScreen.storyboard in Resources */,
 				1896A51C2434FAEA00A3E938 /* Assets.xcassets in Resources */,
 				1896A51A2434FAE600A3E938 /* Main.storyboard in Resources */,
@@ -145,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1896A53A24365BB400A3E938 /* ViewController2.swift in Sources */,
+				1896A5432437B92400A3E938 /* Video.swift in Sources */,
 				1896A5132434FAE600A3E938 /* AppDelegate.swift in Sources */,
 				1896A5152434FAE600A3E938 /* SceneDelegate.swift in Sources */,
 				1896A540243677F600A3E938 /* ChatCell.swift in Sources */,

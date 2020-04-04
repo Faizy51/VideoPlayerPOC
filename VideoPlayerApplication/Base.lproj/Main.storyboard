@@ -25,11 +25,11 @@
                                     <segue destination="lZR-X5-YwT" kind="embed" id="GGX-ld-8T8"/>
                                 </connections>
                             </containerView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.55000000000000004" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NdE-Jw-w2f">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NdE-Jw-w2f">
                                 <rect key="frame" x="20" y="253" width="374" height="463"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="gB9-9D-zMB"/>
+                                    <constraint firstAttribute="width" constant="350" id="gB9-9D-zMB"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iQA-Qa-pWd">
                                     <size key="itemSize" width="50" height="50"/>
