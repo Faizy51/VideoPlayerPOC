@@ -14,23 +14,40 @@ import AVKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var chatsCollection: UICollectionView!
-    weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    @IBOutlet weak var defaultProfileImageView: UIImageView!
+    @IBOutlet weak var chatTextField: UITextField!
+    @IBOutlet weak var sendButton: UIButton!
     
-    var messages: [String] {
-        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let mList = appDelegate.applicationData?.messageList {
-            return mList
-        }
-        return []
-    }
+    fileprivate var profileImagePortraitCornerRadius: CGFloat = 22
+    fileprivate var profileImageLandscapeCornerRadius: CGFloat = 15
+
+    weak var appDelegate = UIApplication.shared.delegate as? AppDelegate
+    var messages: [String]  = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate, let mList = appDelegate.applicationData?.messageList {
+            self.messages = mList
+        }
         
         chatsCollection.delegate = self
         chatsCollection.dataSource = self
         chatsCollection.backgroundColor = .clear
                 
+        defaultProfileImageView.layer.masksToBounds = true
+        defaultProfileImageView.layer.cornerRadius = profileImagePortraitCornerRadius
+        
+        let placeHolderTextColor = UIColor.lightText
+        chatTextField.attributedPlaceholder = NSAttributedString(string: "Type your message here..", attributes: [NSAttributedString.Key.foregroundColor: placeHolderTextColor])
+        
+                
     }
+    
+    @IBAction func sendMessage(_ sender: UIButton) {
+  
+    }
+    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -64,6 +81,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         self.chatsCollection.reloadData()
+        
+        defaultProfileImageView.layer.cornerRadius = defaultProfileImageView.layer.cornerRadius == profileImagePortraitCornerRadius ? profileImageLandscapeCornerRadius : profileImagePortraitCornerRadius
     }
     
 }

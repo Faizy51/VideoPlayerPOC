@@ -31,7 +31,8 @@ class AVPlayerController: AVPlayerViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        self.showsPlaybackControls = false
+
         self.player?.play()
     }
     
@@ -40,6 +41,11 @@ class AVPlayerController: AVPlayerViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.showsPlaybackControls = true
+        super.touchesBegan(touches, with: event)
+    }
+        
 
 }
